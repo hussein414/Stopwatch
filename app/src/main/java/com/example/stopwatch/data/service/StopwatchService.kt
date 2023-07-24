@@ -12,12 +12,12 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
+import android.os.Binder
 import android.os.Build
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.mutableStateOf
 import androidx.core.app.NotificationCompat
 import com.example.stopwatch.data.helper.ServiceHelper
-import com.example.stopwatch.data.state.StopwatchState
 import com.example.stopwatch.utils.formatTime
 import com.example.stopwatch.utils.pad
 import dagger.hilt.android.AndroidEntryPoint
@@ -186,14 +186,14 @@ class StopwatchService : Service() {
         notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build())
     }
 
-//    inner class StopwatchBinder : Binder() {
-//        fun getService(): StopwatchService = this@StopwatchService
-//    }
+    inner class StopwatchBinder : Binder() {
+        fun getService(): StopwatchService = this@StopwatchService
+    }
 }
 
-//enum class StopwatchState {
-//    Idle,
-//    Started,
-//    Stopped,
-//    Canceled
-//}
+enum class StopwatchState {
+    Idle,
+    Started,
+    Stopped,
+    Canceled
+}

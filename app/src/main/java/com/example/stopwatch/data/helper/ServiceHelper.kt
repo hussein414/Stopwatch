@@ -7,7 +7,7 @@ import android.os.Build
 import androidx.compose.animation.ExperimentalAnimationApi
 import com.example.stopwatch.MainActivity
 import com.example.stopwatch.data.service.StopwatchService
-import com.example.stopwatch.data.state.StopwatchState
+import com.example.stopwatch.data.service.StopwatchState
 import com.example.stopwatch.utils.Constants.CANCEL_REQUEST_CODE
 import com.example.stopwatch.utils.Constants.CLICK_REQUEST_CODE
 import com.example.stopwatch.utils.Constants.RESUME_REQUEST_CODE

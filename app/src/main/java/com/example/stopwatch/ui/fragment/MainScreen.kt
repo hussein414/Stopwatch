@@ -17,9 +17,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.stopwatch.data.helper.ServiceHelper
 import com.example.stopwatch.data.service.StopwatchService
-import com.example.stopwatch.data.state.StopwatchState
+import com.example.stopwatch.data.service.StopwatchState
 import com.example.stopwatch.ui.theme.Blue
 import com.example.stopwatch.ui.theme.Dark
 import com.example.stopwatch.ui.theme.Light
@@ -54,7 +55,7 @@ fun MainScreen(stopwatchService: StopwatchService) {
                 Text(
                     text = hours,
                     style = TextStyle(
-                        fontSize = MaterialTheme.typography.titleLarge.fontSize,
+                        fontSize = 90.sp,
                         fontWeight = FontWeight.Bold,
                         color = if (hours == "00") Color.White else Blue
                     )
@@ -63,7 +64,7 @@ fun MainScreen(stopwatchService: StopwatchService) {
             AnimatedContent(targetState = minutes, transitionSpec = { addAnimation() }) {
                 Text(
                     text = minutes, style = TextStyle(
-                        fontSize = MaterialTheme.typography.titleLarge.fontSize,
+                        fontSize = 70.sp,
                         fontWeight = FontWeight.Bold,
                         color = if (minutes == "00") Color.White else Blue
                     )
@@ -72,7 +73,7 @@ fun MainScreen(stopwatchService: StopwatchService) {
             AnimatedContent(targetState = seconds, transitionSpec = { addAnimation() }) {
                 Text(
                     text = seconds, style = TextStyle(
-                        fontSize = MaterialTheme.typography.titleLarge.fontSize,
+                        fontSize = 50.sp,
                         fontWeight = FontWeight.Bold,
                         color = if (seconds == "00") Color.White else Blue
                     )
